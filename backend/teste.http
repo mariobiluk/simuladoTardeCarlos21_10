@@ -1,0 +1,43 @@
+### teste cadastro de cliente
+
+POST http://localhost:3000/cliente
+Content-Type: application/json
+
+{
+    "nome": "fabio",
+    "email":"fabio@gmail",
+    "senha":"fgh",
+    "cpf":"98765432190",
+    "telefone":"48999956523"
+}
+
+
+### logn
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+    "email": "fabio@gmail",
+    "senha": "fgh"
+}
+
+
+### teste login
+# @name loginReq
+
+### teste lista 
+GET http://localhost:3000/clientes
+Authorization: {{loginReq.response.body.token}}
+
+### teste cadastro de drone
+POST http://localhost:3000/drone
+Content-Type: application/json
+Authorization: {{loginReq.response.body.token}}
+
+{
+    "modelo": "quevoa",
+    "marca":"dedrone",
+    "numSerie":6767,
+    "tipoServico":"manuitencao",
+    "idCliente": 1
+}
